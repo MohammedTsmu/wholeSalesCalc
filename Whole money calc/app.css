@@ -5,8 +5,8 @@ body {
 /* Main container */
 .container {
   padding: 20px 200px;
-  margin: 20px 20px;
-  border: 3px solid #eee;
+  margin: 0 20px;
+  /* border: 3px solid #eee; */
 }
 
 button {
@@ -45,9 +45,9 @@ input {
   border: 3px solid #eee;
   color: #333;
   padding: 20px;
-  position: fixed;
+  /* position: fixed;
   left: 22%;
-  top: 7%;
+  top: 7%; */
   opacity: 0;
   display: none;
 }
@@ -65,6 +65,9 @@ input {
 .con1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  display: flex;
+  overflow-x: scroll;
 }
 
 /* .con2 {
@@ -73,6 +76,8 @@ input {
 .calc-con-1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  overflow-x: scroll;
 }
 
 .calc-con-2 {
@@ -90,6 +95,7 @@ input {
   top: 0;
   opacity: 0;
   display: none;
+  z-index: -1;
 }
 
 /* Transition all 0.3s linear*/
@@ -137,27 +143,9 @@ table,
   box-shadow: 3px 3px 5px #666;
 }
 
-/* .output {
-  } */
-
-/* .textContent {
-  padding: 10px;
-  margin: 5px;
-  background-color: steelblue;
-  color: #eee;
-  font-size: 24px;
-}
-
-.textContent span {
-  padding: 10px;
-  margin: 10px;
-  background-color: #2e3d50;
-  font-size: larger;
-} */
-
 /* Output Table */
 .receipt-table {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   width: 100%;
   border-collapse: collapse;
   font-size: 16px;
@@ -200,40 +188,56 @@ footer {
     padding: 10px;
   }
 
-  /* .con1, */
-  .calc-con-1 {
-    grid-template-columns: 1fr;
-  }
-
   .prices {
-    left: 0;
-    top: 0;
-    /* width: 100%;
-    height: 100%; */
-    /* background-color: lightgray;
-    background-color: #00ffcc; */
+    /* left: 0;
+    top: 0; */
+    /* width: 100%; */
+    /* height: 100%; */
+    /* background-color: lightgray; */
+    /* background-color: #00ffcc; */
     /* border: 3px solid #eee; */
-    color: #333;
+    /* color: #333; */
     /* padding: 20px; */
-    /* position: fixed;
-    left: 22%;
-    top: 7%; */
-    /* opacity: 0;
-    display: none; */
-    /* display: flex; */
-    overflow: scroll;
+    /* position: fixed; */
+    /* left: 0%; */
+    /* top: 10%; */
+    /* opacity: 0; */
+    /* display: none; */
+    /* display: grid; */
+  }
+  .con1 {
+    /* display: grid; */
+    /* overflow-x: scroll; */
+    /* grid-template-columns: 1fr;
+    display: flex;
+    overflow: scroll; */
+    /* display: flex;
+    overflow-x: scroll;
+    background-color: yellow; */
+    /* z-index: 1111; */
+  }
+  .calc-con-1 {
+    /* grid-template-columns: 1fr; */
+    /* display: flex;
+    overflow-x: scroll; */
   }
 
-  .close-button {
+  .popUpBox2 {
+    /* display: flex;
+    overflow: scroll; */
+    /* z-index: 1111; */
+  }
+  /* .close-button {
     top: 5px;
     right: 5px;
-  }
+  } */
 
   footer {
     display: grid;
     grid-template-columns: 1fr;
     /* padding: 0; */
     margin: 0 30px;
+    font-size: 14px;
   }
 }
 

@@ -21,6 +21,7 @@
     visibility: visible !important;
   }
   footer {
+    visibility: hidden;
     display: none;
   }
 }

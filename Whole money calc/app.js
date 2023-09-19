@@ -45,6 +45,7 @@ var prices = document.getElementById('prices');
 var popUpBox1 = document.getElementById('popUpBox1');
 var popUpBox2 = document.getElementById('popUpBox2');
 var output = document.getElementById('output');
+var userCalcContainer = document.getElementById('user-calc-container');
 
 var printButton = document.getElementById('printButton');
 
@@ -139,9 +140,11 @@ btnCalc.addEventListener('click', function () {
     outputHTML += '<table class="receipt-table">';
     // outputHTML += '<thead ><tr><th><h2>حاسبة الرصيد الجملة</h2></th><th></th><th><th></th></th></tr></thead>';
     // outputHTML += '<thead ><tr><th><h2>حاسبة الرصيد الجملة</h2></th><th></th><th>' + printCurrentDateAndTime(true) + '<th><th>' + name + '</th></tr></thead>';
-    outputHTML += '<thead ><tr><th><h2>حاسبة الرصيد الجملة</h2></th><th></th><th>' + printCurrentDateAndTime(true) + '</th><th>البائع/ ' + writerName + '</th></tr></thead>';
+    outputHTML += '<thead ><tr><th><h3>حاسبة الرصيد الجملة</h3></th><th></th><th>' + printCurrentDateAndTime(true) + '</th><th>البائع/ ' + writerName + '</th></tr></thead>';
     outputHTML += '<thead><tr><th><strong>الفئة</strong></th><th>العدد</th><th>السعر</th><th>سعر الجملة</th></tr></thead>';
     outputHTML += '<tbody>';
+
+
 
     let x2AsiaResult = multiplication(parseFloat(x2AsiaPrice.value), parseFloat(x2Asia.value));
     let x2ZainResult = multiplication(parseFloat(x2ZainPrice.value), parseFloat(x2Zain.value));
@@ -225,7 +228,7 @@ btnCalc.addEventListener('click', function () {
 
 
     // outputHTML += '<thead ><tr><th><h2>المجموع</h2></th> <th><h2>' + totalQuantity + '</h2></th><th><h2>' + convertNumber(totalPrice) + ' ' + dinarText(totalPrice) + '</h2></th> <th><h2>' + convertNumber(totalWholeSales) + ' ' + dinarText(totalPrice) + '</h2></th></tr></thead>';
-    outputHTML += '<thead ><tr><th><h2>المجموع</h2></th> <th><h2>' + totalQuantity + '</h2></th><th><h2>' + convertNumber(totalPrice) + ' ' + dinarText(totalPrice) + '</h2></th> <th></th></tr></thead>';
+    outputHTML += '<thead ><tr><th><h4>المجموع</h4></th> <th><h4>' + totalQuantity + '</h4></th><th><h4>' + convertNumber(totalPrice) + ' ' + dinarText(totalPrice) + '</h4></th> <th></th></tr></thead>';
 
     // Close the table
     outputHTML += '</tbody></table>';
@@ -241,10 +244,12 @@ btnCalc.addEventListener('click', function () {
 btnPriceEdit.addEventListener('click', function () {
     displayBlockOn(prices);
     displayBlockOn(overlay);
+    opacityOff(userCalcContainer)
 
     setTimeout(() => {
         opacityOn(prices);
         opacityOn(overlay);
+        displayOff(userCalcContainer);
     }, 100);
 });
 
@@ -252,10 +257,12 @@ btnPriceEdit.addEventListener('click', function () {
 btnPriceSave.addEventListener('click', function () {
     opacityOff(prices);
     opacityOff(overlay);
+    displayBlockOn(userCalcContainer);
 
     setTimeout(() => {
         displayOff(prices);
         displayOff(overlay);
+        opacityOn(userCalcContainer);
     }, 500);
 
 
