@@ -1,0 +1,244 @@
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+/* Main container */
+.container {
+  padding: 20px 200px;
+  margin: 0 20px;
+  /* border: 3px solid #eee; */
+}
+
+button {
+  padding: 10px;
+  border: none;
+  margin-bottom: 5px;
+  background-color: #333;
+  color: #eee;
+  font-size: large;
+  cursor: pointer;
+}
+input {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 3px dotted #777;
+}
+
+.x2,
+.x5,
+.x10,
+.x15,
+.x25,
+.x35 {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #eee;
+  color: #333;
+}
+
+/* popUpBox */
+/* Prices */
+
+.prices {
+  background-color: lightgray;
+  background-color: #00ffcc;
+  border: 3px solid #eee;
+  color: #333;
+  padding: 20px;
+  /* position: fixed;
+  left: 22%;
+  top: 7%; */
+  opacity: 0;
+  display: none;
+}
+.popUpBox1 {
+  padding: 10px;
+}
+
+/* .popUpBox2 {
+  } */
+
+.container h1 {
+  background-color: #3333333b;
+  padding: 20px;
+}
+.con1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  display: flex;
+  overflow-x: scroll;
+}
+
+/* .con2 {
+  } */
+
+.calc-con-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.calc-con-2 {
+  margin-top: 20px;
+}
+
+/* .btnPriceSave {
+  } */
+
+.overlay {
+  background-color: #333333f1;
+  width: 100%;
+  position: fixed;
+  height: 710px;
+  top: 0;
+  opacity: 0;
+  display: none;
+  z-index: -1;
+}
+
+/* Transition all 0.3s linear*/
+.overlay,
+.prices,
+.calc-con-2 button {
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+}
+
+/* Border-radius 5px */
+.x2,
+.x5,
+.x10,
+.x15,
+.x25,
+.x35,
+button,
+.popUpBox1,
+input,
+.container,
+.container h1,
+.prices,
+footer {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+/* Box-shadow 3px 3px 5px #333 */
+.x2,
+.x5,
+.x10,
+.x15,
+.x25,
+.x35,
+button,
+table,
+.textContent {
+  box-shadow: 3px 3px 5px #666;
+}
+
+/* Output Table */
+.receipt-table {
+  /* margin-top: 20px; */
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.receipt-table th,
+.receipt-table td {
+  border: 1px solid #333;
+  padding: 8px;
+  text-align: center;
+}
+
+.receipt-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+.receipt-table .last-table {
+  background-color: #2e3d50;
+}
+.receipt-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.receipt-table tr:hover {
+  background-color: #ddd;
+}
+
+/* Footer */
+footer {
+  background-color: #777;
+  color: #eee;
+  text-align: center;
+  padding: 20px;
+  margin: 0 220px;
+}
+
+/* Add a media query for screens smaller than 768px (typical mobile) */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .prices {
+    /* left: 0;
+    top: 0; */
+    /* width: 100%; */
+    /* height: 100%; */
+    /* background-color: lightgray; */
+    /* background-color: #00ffcc; */
+    /* border: 3px solid #eee; */
+    /* color: #333; */
+    /* padding: 20px; */
+    /* position: fixed; */
+    /* left: 0%; */
+    /* top: 10%; */
+    /* opacity: 0; */
+    /* display: none; */
+    /* display: grid; */
+  }
+  .con1 {
+    /* display: grid; */
+    /* overflow-x: scroll; */
+    /* grid-template-columns: 1fr;
+    display: flex;
+    overflow: scroll; */
+    /* display: flex;
+    overflow-x: scroll;
+    background-color: yellow; */
+    /* z-index: 1111; */
+  }
+  .calc-con-1 {
+    /* grid-template-columns: 1fr; */
+    /* display: flex;
+    overflow-x: scroll; */
+  }
+
+  .popUpBox2 {
+    /* display: flex;
+    overflow: scroll; */
+    /* z-index: 1111; */
+  }
+  /* .close-button {
+    top: 5px;
+    right: 5px;
+  } */
+
+  footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* padding: 0; */
+    margin: 0 30px;
+    font-size: 14px;
+  }
+}
+
+/* Rest of your CSS remains the same */
