@@ -49,7 +49,7 @@ var userCalcContainer = document.getElementById('user-calc-container');
 
 var printButton = document.getElementById('printButton');
 
-var writerName = prompt('أسم المستخدم');
+// var writerName = prompt('أسم المستخدم');
 
 
 // ======================================== E N D | V A R I A B L E S =================================================================
@@ -138,9 +138,9 @@ btnCalc.addEventListener('click', function () {
     // Create a table structure with headers
     outputHTML += '<div class = "container">';
     outputHTML += '<table class="receipt-table">';
-    // outputHTML += '<thead ><tr><th><h2>حاسبة الرصيد الجملة</h2></th><th></th><th><th></th></th></tr></thead>';
-    // outputHTML += '<thead ><tr><th><h2>حاسبة الرصيد الجملة</h2></th><th></th><th>' + printCurrentDateAndTime(true) + '<th><th>' + name + '</th></tr></thead>';
-    outputHTML += '<thead ><tr><th><h3>حاسبة الرصيد الجملة</h3></th><th></th><th>' + printCurrentDateAndTime(true) + '</th><th>البائع/ ' + writerName + '</th></tr></thead>';
+    // outputHTML += '<thead ><tr><th><h3>حاسبة الرصيد الجملة</h3></th><th></th><th>' + printCurrentDateAndTime(true) + '</th><th></th></tr></thead>';
+    // outputHTML += '<thead ><tr><th><h4>حاسبة الرصيد الجملة |  (' + printCurrentDateAndTime(true) + ')</h4></th><th></th><th></th><th></th></tr></thead>';
+    outputHTML += '<thead ><tr><th><p>حاسبة الرصيد الجملة |  (' + printCurrentDateAndTime(true) + ')</p></th><th></th><th></th><th></th></tr></thead>';
     outputHTML += '<thead><tr><th><strong>الفئة</strong></th><th>العدد</th><th>السعر</th><th>سعر الجملة</th></tr></thead>';
     outputHTML += '<tbody>';
 
@@ -237,6 +237,8 @@ btnCalc.addEventListener('click', function () {
     // Display the table
     output.innerHTML = outputHTML; // Set the HTML content of the output element
     // output2.innerHTML2 = outputHTML2; // Set the HTML content of the output element
+
+
 });
 // ===================================== E N D | C A L C U L A T E | P R I C E S =============================================
 
@@ -478,3 +480,70 @@ function generatePDF() {
 
     html2pdf().from(element).set(pdfOptions).save();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================
+// Check if the user is already logged in
+const user = JSON.parse(localStorage.getItem('user'));
+if (user) {
+    showLoggedInState(user);
+    displayLogs(); // Show logs if the user is logged in
+} else {
+    showLoginForm(); // Show the login form by default
+}
+
+// ...
+
+// // Function to perform the calculation
+// function calc() {
+//     // Perform your calculation here
+//     const result = /* your calculation logic */;
+
+//     // Store the result in local storage with a timestamp
+//     const logEntry = {
+//         result,
+//         timestamp: new Date().toISOString()
+//     };
+
+//     const logs = JSON.parse(localStorage.getItem('logs')) || [];
+//     logs.push(logEntry);
+//     localStorage.setItem('logs', JSON.stringify(logs));
+
+//     // Display the result to the user
+//     showMessage(`Calculation result: ${result}`);
+
+//     // Show logs
+//     displayLogs();
+// }
+
+// Function to display logs
+function displayLogs() {
+    const logs = JSON.parse(localStorage.getItem('logs')) || [];
+
+    // Filter logs for the last week
+    const oneWeekAgo = new Date();
+    oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+    const lastWeekLogs = logs.filter(log => new Date(log.timestamp) >= oneWeekAgo);
+
+    // Display last week's logs to the user
+    const logList = document.getElementById('log-list');
+    logList.innerHTML = ''; // Clear the previous log entries
+
+    lastWeekLogs.forEach(log => {
+        const logItem = document.createElement('li');
+        logItem.textContent = `Result: ${log.result}, Timestamp: ${log.timestamp}`;
+        logList.appendChild(logItem);
+    });
+}
+
+// displayLogs();
